@@ -1,0 +1,42 @@
+a {
+	text-decoration: none;
+	color: black;
+}
+
+ul {
+	padding-left: 45px;
+}
+
+#container {
+	width: 400px;
+	height: 200px;
+	background-image: url('imagens/backgorund.png');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+
+#insta {
+	list-style-image: url('imagens/Insta.png');
+}
+
+#twitter {
+	list-style-image: url('imagens/Twitter.png');
+}
+
+#youtube {
+	list-style-image: url('imagens/Youtube.png');
+}
+
+#nome {
+	font-family: 'Arial';
+	font-size: 20px;
+	padding-left: 10px;
+	padding-top: 20px;
+	font-weight: 500;
+	letter-spacing: 2px;
+}
+
+.redes {
+	font-size: 12px;
+}

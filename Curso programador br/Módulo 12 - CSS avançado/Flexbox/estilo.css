@@ -1,0 +1,34 @@
+.container {
+    display: flex;
+    /*
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;*/
+    /*flex-wrap: wrap; quebra elemento ao diminuir a tela*/
+    /* isso seria igual a
+    flex-flow: row wrap; */
+    background-color: darkgrey;
+    height: 290px;
+    color: white;
+}
+
+.r1 {
+    background-color: red;
+}
+
+.r2 {
+    /* order: 0; padrão*/
+    /*align-self: flex-end; é igual o align-items só que pra um elemento específico*/
+    background-color: blue;
+}
+
+.r3 {
+    /*flex-shrink: 0;*/
+    /*flex-grow: 3;*/
+    background-color: green;
+}
+
+.rect {
+    width: 150px;
+    height: 100px;
+}

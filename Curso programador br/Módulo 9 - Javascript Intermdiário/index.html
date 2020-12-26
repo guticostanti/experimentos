@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+    <title>Novo título</title>
+
+    <script>
+
+        let numero = 0;
+
+        let interval;
+
+        function atualizarTexto(){
+
+            let h = document.getElementsByTagName('h1')[0];
+            h.innerHTML += " " + numero;
+            numero++;
+
+        }
+
+      function iniciar() {
+
+        interval = setInterval(atualizarTexto, 3000);
+
+      }
+
+      function parar() {
+        clearInterval(interval);
+      }
+
+    </script>
+</head>
+
+<body>
+
+    <h1>Título</h1>
+    <input onclick="iniciar()" type="submit" value="inciar">
+    <input onclick="parar()" type="submit" value="parar">
+  
+</body>
+
+</html>

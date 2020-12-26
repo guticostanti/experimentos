@@ -1,0 +1,52 @@
+body {
+	font-size: 1.2rem;
+}
+
+
+.static {
+	position: static;
+}
+
+.relative {
+	position: relative;
+}
+/*Posição relativa é a posição relativa à posição original que ela ficaria se fosse estática.
+Ou seja, ela é relativa a posição que seria se fosse estática.*/
+
+.fixed {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+}
+/*Posição fixed é a posição relativa à janela*/
+
+.absolute {
+	position: absolute;
+}
+/*Posição absolute é relativa ao elemento pai do elemento em que a position é aplicada.
+Contudo, o elemento pai não pode ser static, senão ele vai buscar o pai do pai.*/
+
+.sticky {
+	position: sticky;
+}
+/*Rola até a posição do elemento, mas não passa de um certo limite que você determinar*/
+
+.quadrado {
+	width: 100px;
+	height: 100px;
+	display: inline-block;
+}
+
+.ret {
+	width: 100px;
+	height: 500px;
+	margin-top: 10px;
+}
+
+.red {
+	background-color: red;
+}
+
+.blue {
+	background-color: blue;
+}

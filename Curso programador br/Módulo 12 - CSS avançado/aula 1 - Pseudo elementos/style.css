@@ -1,0 +1,29 @@
+p::first-line {
+    color: red;
+}
+
+p::first-letter {
+    font-size: 32px;
+}
+
+li {
+    list-style: none;
+}
+
+li::before {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-image: url('./imagens/gmail.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+/* além do before, temos também o after */
+
+p::selection {
+    background-color: yellow;
+    color: orangered;
+}
+/* o selection muda o estilo do elemento quando selecionado */
