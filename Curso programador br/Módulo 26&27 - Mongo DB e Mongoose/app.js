@@ -3,6 +3,8 @@ const app = express();
 const port = 3000;
 const mongoose = require('mongoose');
 
+mongoose.connect('mongodb://localhost/newlinks', { useNewUrlParser: true, useUnifiedTopology: true })
+
 const linkSchema = new mongoose.Schema({
     title: { type: String, required: true },
     description: String,
@@ -10,55 +12,9 @@ const linkSchema = new mongoose.Schema({
     click: { type: Number, default: 0 }
 });
 
-// Modelo
+
 const Link = mongoose.model('Link', linkSchema);
 
-// Documento
-const link = new Link({
-    title: "progbr",
-    description: "Link para o twitter",
-    url: "https://twitter.com/progbr"
-});
-
-link.save().then(doc => {
-    console.log(doc);
-}).catch(err => {
-    console.log(err);
-})
-
-// mongoose.connect('mongodb://127.0.0.1/links', (err, db) => {
-//     console.log(err);
-//     console.log(db);
-// })
-
-// mongoose.connect('mongodb://127.0.0.1/links').then(db => {
-//     console.log(db);
-// }).catch(err => {
-//     console.log(err);
-// })
-
-const personSchema = new mongoose.Schema({
-    name: String,
-    age: Number
-})
-
-const Person = mongoose.model('Person', personSchema);
-
-let person = new Person({
-    name: "José",
-    age: 23
-});
-
-person.save().then(doc => {
-    console.log(doc);
-}).catch(err => {
-    console.log(err);
-})
-
-mongoose.connect('mongodb://localhost/newlinks', {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-});
 
 let db = mongoose.connection;
 
@@ -67,6 +23,17 @@ db.on("error", () => {
 });
 db.once("open", () => {
     console.log("Banco carregado");
+
+    app.get("/:title", async (req, res) => {
+        let title = req.params.title;
+        try {
+            let doc = await Link.findOne({title});
+            console.log(doc);
+            res.redirect(doc.url);
+        } catch (error) {
+            res.send(error);
+        }
+    })
 });
 
 
