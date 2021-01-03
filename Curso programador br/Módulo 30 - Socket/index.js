@@ -10,6 +10,8 @@ const server = app.listen(3000, () => {
     console.log("running");
 })
 
+const randoms = []
+
 
 const io = socketIO(server)
 
@@ -17,10 +19,7 @@ io.on('connection', (socket) => {
 
     console.log("New connection")
 
-    socket.emit('hello', { msg: "Seja bem vindo!" })
 
-    socket.on('hello_client_response', (data) => {
-        console.log(data.msg)
-    })
+    socket.broadcast.emit('hello', { msg: `Chegou um novo usuário` })
 
 })
